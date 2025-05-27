@@ -1,0 +1,163 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+    padding-bottom: 70px;
+    overflow-x: hidden;
+  }
+  
+  /* Header */
+  .title {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  .title h1 {
+    font-size: 1.5rem;
+  }
+  
+  .navigate ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .navigate li button {
+    background-color: #00bcd4;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navigate li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Sección de productos */
+  .contain {
+    padding: 1rem;
+  }
+  
+  .producto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    height: 300px;
+    margin-bottom: 1rem;
+  }
+  
+  .producto > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  /* Imagen */
+  .producto__img-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .producto__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    border-radius: 8px;
+  }
+  
+  /* Descripción y precio */
+  .producto__descripcion {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  
+  .producto__precio {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  /* Controles de cantidad */
+  .producto__agg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .agg__control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .agg__btn {
+    background-color: #00bcd4;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .agg__count {
+    min-width: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .agg__submit {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .agg__submit:hover {
+    background-color: #45a049;
+  }
+  
+  /* Nav fijo inferior */
+  .fixed {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    z-index: 1000;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #555;
+  }
