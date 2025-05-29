@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="normalize.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="bem.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <title>La herencia</title>
 </head>
 <body>
@@ -21,30 +21,97 @@
 
   <main class="contain">
     <section id="entradas" class="contain__entradas">
-      <article class="producto">
-        <div class="producto__img-container">
-          <img class="producto__img" src="plato.jpg" alt="Plato" />
-        </div>
+      <article class="producto" data-name="Entrada de Mariscos" data-price="10000">
+        <div class="producto__img-container"><img class="producto__img" src="imgs/plato.jpg" alt="Plato" /></div>
         <div class="producto__descripcion">Deliciosa entrada de mariscos frescos.</div>
         <div class="producto__precio">$10.000</div>
         <div class="producto__agg">
           <div class="agg__control">
-            <button class="agg__btn">-</button>
-            <span class="agg__count">1</span>
-            <button class="agg__btn">+</button>
+            <button class="agg__btn" onclick="updateQuantity(this, -1)">-</button>
+            <span class="agg__count"><input type="number" class="quantity" value="1" min="1"></span>
+            <button class="agg__btn" onclick="updateQuantity(this, 1)">+</button>
           </div>
-          <button class="agg__submit">Confirmar pedido</button>
+          <button class="agg__submit" onclick="addToOrder(this)">Confirmar pedido</button>
+        </div>
+      </article>
+    </section>
+    <section id="postres" class="contain__entradas">
+      <article class="producto" data-name="Postre" data-price="10000">
+        <div class="producto__img-container"><img class="producto__img" src="imgs/postre.jpg" alt="Postre" /></div>
+        <div class="producto__descripcion">Exquisito postre dulce.</div>
+        <div class="producto__precio">$10.000</div>
+        <div class="producto__agg">
+          <div class="agg__control">
+            <button class="agg__btn" onclick="updateQuantity(this, -1)">-</button>
+            <span class="agg__count"><input type="number" class="quantity" value="1" min="1"></span>
+            <button class="agg__btn" onclick="updateQuantity(this, 1)">+</button>
+          </div>
+          <button class="agg__submit" onclick="addToOrder(this)">Confirmar pedido</button>
+        </div>
+      </article>
+    </section>
+    <section id="cocteles" class="contain__entradas">
+      <article class="producto" data-name="Coctel" data-price="10000">
+        <div class="producto__img-container"><img class="producto__img" src="imgs/coctel.jpg" alt="Coctel" /></div>
+        <div class="producto__descripcion">Refrescante coctel tropical.</div>
+        <div class="producto__precio">$10.000</div>
+        <div class="producto__agg">
+          <div class="producto__agg">
+            <div class="agg__control">
+              <button class="agg__btn" onclick="updateQuantity(this, -1)">-</button>
+              <span class="agg__count"><input type="number" class="quantity" value="1" min="1"></span>
+              <button class="agg__btn" onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button class="agg__submit" onclick="addToOrder(this)">Confirmar pedido</button>
+          </div>
         </div>
       </article>
     </section>
   </main>
 
   <nav class="fixed">
-    <p>Navegación inferior</p>
+    <ul class="fixed__opt">
+      <li>
+        <button class="fixed__button">
+          <a href="billing.html"><i class="fas fa-file-invoice"></i></a>
+        </button>
+      </li>
+      <li>
+        <button class="fixed__button">
+          <a href="index.html"><i class="fas fa-house"></i></a>
+        </button>
+      </li>
+      <li>
+        <button class="fixed__button">
+          <a href="#"><i class="fas fa-user-tie"></i></a>
+        </button>
+      </li>
+    </ul>
   </nav>
 
   <footer>
-    <p>&copy; 2025 La herencia</p>
+    <p>© 2025 La herencia</p>
   </footer>
+
+  <script>
+    let orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+    function updateQuantity(btn, change) {
+      const input = btn.parentElement.querySelector('.quantity');
+      let value = parseInt(input.value) + change;
+      if (value < 1) value = 1;
+      input.value = value;
+    }
+
+    function addToOrder(btn) {
+      const product = btn.closest('.producto');
+      const name = product.dataset.name;
+      const price = parseInt(product.dataset.price);
+      const quantity = parseInt(product.querySelector('.quantity').value);
+      orders.push({ name, price, quantity });
+      localStorage.setItem('orders', JSON.stringify(orders));
+      alert(`${quantity} x ${name} añadido al pedido`);
+    }
+  </script>
 </body>
 </html>
