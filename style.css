@@ -197,15 +197,15 @@ h1, h2, h3 {
 }
 
 .event-card--1 {
-    background: url('./imgs/pexels-cottonbro-7095719(1).jpg') center/cover no-repeat;
+    background: url('./img/resital.jpg') center/cover no-repeat;
 }
 
 .event-card--2 {
-    background: url('./imgs/pexels-lucaspezeta-2092895.jpg') center/cover no-repeat;
+    background: url('./img/noche-estrellada.jpg') center/cover no-repeat;
 }
 
 .event-card--3 {
-    background: url('./imgs/pexels-pixabay-270789.jpg') center/cover no-repeat;
+    background: url('./img/tango.jpg') center/cover no-repeat;
 }
 
 .event-card__content {
