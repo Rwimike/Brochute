@@ -1,29 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Herencia - Events</title>
+    <title>La Herencia - Eventos Exclusivos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
-        <h1 class="title">La Herencia Events</h1>
-        <section class="carrusel">
-            <div class="carrusel__elemento">
-                <img src="imgs/pexels-pixabay-270789.jpg" alt="Live music event at La Herencia restaurant">
-            </div>
-            <div class="carrusel__elemento">
-                <img src="imgs/pexels-pixabay-270789.jpg" alt="Wine tasting event at La Herencia restaurant">
-            </div>
-            <div class="carrusel__elemento">
-                <img src="imgs/pexels-pixabay-270789.jpg" alt="Special dinner event at La Herencia restaurant">
+    <header class="header">
+        <div class="header__logo">
+            <h1 class="logo">La Herencia</h1>
+            <p class="sublogo">Eventos Exclusivos</p>
+        </div>
+        <nav class="nav">
+            <ul class="nav__menu">
+                <li><a href="menu.html"><i class="fas fa-utensils"></i> Menú</a></li>
+                <li><a href="#"><i class="fas fa-calendar-check"></i> Agenda aquí</a></li>
+                <li><a href="#"><i class="fas fa-question-circle"></i> Preguntas</a></li>
+                <li><a href="https://rwimike.github.io/Portafolio/"><i class="fas fa-handshake"></i> Aliados</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main">
+        <section class="hero">
+            <div class="hero__overlay">
+                <h2 class="hero__title">Experiencias que perduran</h2>
+                <p class="hero__text">Eventos exclusivos en un ambiente de elegancia atemporal</p>
             </div>
         </section>
-        <section class="info">
-            <h2>Upcoming Events</h2>
-            <p>Join us for exciting events at La Herencia, including live music, wine tastings, and special dining experiences!</p>
+        
+        <section class="events">
+            <h2 class="section-title">Próximos Eventos</h2>
+            <p class="section-subtitle">Descubre nuestras veladas exclusivas</p>
+            
+            <div class="events-carousel">
+                <div class="event-card event-card--1">
+                    <div class="event-card__content">
+                        <h3>Noche de Recital en vivo</h3>
+                        <p>Una noche de clasicos de la musica totalmente a luz de velas</p>
+                        <span class="event-date"><i class="far fa-calendar-alt"></i> 15 Julio, 2023</span>
+                    </div>
+                </div>
+                
+                <div class="event-card event-card--2">
+                    <div class="event-card__content">
+                        <h3>Noche Estrellada</h3>
+                        <p>Cena gourmet bajo las estrellas con maridaje excepcional</p>
+                        <span class="event-date"><i class="far fa-calendar-alt"></i> 22 Julio, 2023</span>
+                    </div>
+                </div>
+                
+                <div class="event-card event-card--3">
+                    <div class="event-card__content">
+                        <h3>Noche de tango </h3>
+                        <p>Una velada apasionada con los mejores exponentes del género</p>
+                        <span class="event-date"><i class="far fa-calendar-alt"></i> 29 Julio, 2023</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta">
+            <h2 class="cta__title">Reserva tu experiencia exclusiva</h2>
+            <p class="cta__text">Cada evento en La Herencia es una oportunidad para crear memorias inolvidables</p>
+            <a href="#" class="cta__button">Reservar ahora</a>
         </section>
     </main>
+    
+    <footer class="footer">
+        <div class="footer__info">
+            <p>© 2023 La Herencia - Todos los derechos reservados</p>
+            <p>Diseñado con <i class="fas fa-heart"></i> por nuestros aliados</p>
+        </div>
+    </footer>
 </body>
 </html>
